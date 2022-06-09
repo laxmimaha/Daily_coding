@@ -1,3 +1,13 @@
+"""
+Implement a stack that has the following methods:
+
+push(val), which pushes an element onto the stack
+pop(), which pops off and returns the topmost element of the stack. If there are no elements in the stack, then it should throw an error or return null.
+max(), which returns the maximum value in the stack currently. If there are no elements in the stack, then it should throw an error or return null.
+Each method should run in constant time.
+
+"""
+
 class Stack:
     
     def __init__(self, initial_size = 10):
@@ -34,9 +44,16 @@ class Stack:
         self.arr = [0 for _ in range( 2* len(old_arr))]
         for index, element in enumerate(old_arr):
             self.arr[index] = element
-    #def get_max(self,data):
+    def get_max(self):
+        if self.arr is None:
+            return 0
+        else:
+
+            return max(self.arr)
+
 a = Stack()
 print(a.arr)
+print("maximum elementin stack:", a.get_max())
 a.push(40)
 a.push(3)
 a.push(29)
@@ -47,5 +64,5 @@ a.push(26)
 print(a.arr)
 print(a.pop())
 print(a.pop())
-print("maximum elementin stack:", max(a.arr))
+print("maximum elementin stack:", a.get_max())
 
